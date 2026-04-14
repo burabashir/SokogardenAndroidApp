@@ -38,7 +38,7 @@ class Signin : AppCompatActivity() {
 //        on click of button signin, we need to interact with api end point as we pass two data info, i.e email and password
         signinButton.setOnClickListener {
 //            specify the api end point
-            val api = "https://kbenkamotho.alwaysdata.net/api/signin"
+            val api = "https://dumabashir.alwaysdata.net/api/signin"
 
 //            create a RequstParans that will enable u to hold data in form of bundle/package
             val data = RequestParams()
@@ -53,6 +53,9 @@ class Signin : AppCompatActivity() {
 //            By use of the function post_login inside of the helper class we pass the api and data
             helper.post_login(api, data)
 
+//            Intent to navigate to main Activity
+            val intent = Intent(applicationContext, MainActivity::class.java)
+            startActivity(intent)
 
         }
     }
