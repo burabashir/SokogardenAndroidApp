@@ -2,4 +2,11 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="emerald_50">#F0FDF4</color>
+    <color name="emerald_600">#059669</color>
+    <color name="teal_50">#F0FDFA</color>
+    <color name="cyan_50">#ECFEFF</color>
+    <color name="pink_500">#EC4899</color>
+    <color name="slate_600">#475569</color>
+    <color name="emerald_500">#10B981</color>
 </resources>

@@ -1,77 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#986"
-    tools:context=".MainActivity">
+    android:background="#F3F4F6">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="❇️SokoGarden❇️"
-            android:textSize="38sp"
-            android:textAlignment="center"
-            android:textStyle="bold|italic"
-            android:background="@drawable/shape"
-            android:padding="12dp"
-            android:textColor="#753"/>
-
+    <!-- Header -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginBottom="16dp">
+        android:orientation="vertical"
+        android:background="@drawable/gradient_header_main"
+        android:paddingBottom="20dp">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="👤Signup"
-            android:textSize="25sp"
-            android:padding="10dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="8dp"
-            android:textColor="#785"
-            android:id="@+id/signupBtn"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="👮Signin"
-            android:textSize="25sp"
-            android:padding="10dp"
-            android:layout_marginRight="50dp"
-            android:layout_marginTop="8dp"
-            android:textColor="#785"
-            android:id="@+id/signinBtn"/>
-
+        <!-- Title -->
         <TextView
-            android:id="@+id/welcomeText"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Welcome"
-            android:textSize="24sp"
+            android:text="🌿 SokoGarden"
+            android:textSize="28sp"
             android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:visibility="gone"
-            android:layout_marginTop="20dp"/>
+            android:textStyle="bold"
+            android:paddingTop="24dp"
+            android:paddingBottom="16dp"
+            android:textColor="#FFFFFF"/>
 
-        <Button
-            android:id="@+id/logoutBtn"
-            android:layout_width="wrap_content"
+        <!-- Buttons -->
+        <LinearLayout
+            android:id="@+id/authButtonsContainer"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Logout"
-            android:layout_marginTop="10dp"
-            android:backgroundTint="#ED0909"
-            android:textColor="#F2F2F2"
-            android:visibility="gone"/>
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="16dp">
+
+            <!-- Signup -->
+            <Button
+                android:id="@+id/signupBtn"
+                android:layout_width="1dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:text="Sign Up"
+                android:textStyle="bold"
+                android:layout_marginLeft="4dp"
+                android:textColor="#7C3AED"
+                android:backgroundTint="#FFFFFF"
+                android:layout_marginEnd="8dp"/>
+
+            <!-- Signin -->
+            <Button
+                android:id="@+id/signinBtn"
+                android:layout_width="1dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="4dp"
+                android:text="Sign In"
+                android:textStyle="bold"
+                android:textColor="#7C3AED"
+                android:backgroundTint="#FFFFFF"
+                android:layout_marginStart="8dp"/>
+
+            <Button
+                android:id="@+id/aboutbtn"
+                android:layout_width="1dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="4dp"
+                android:text="About"
+                android:textStyle="bold"
+                android:textColor="#7C3AED"
+                android:backgroundTint="#FFFFFF"
+                android:layout_marginStart="8dp"/>
+
+
+        </LinearLayout>
+
+        <!-- Welcome (hidden) -->
+        <LinearLayout
+            android:id="@+id/welcomeContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/welcomeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome back!"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"/>
+
+            <Button
+                android:id="@+id/logoutBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Logout"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#EF4444"
+                android:layout_marginTop="10dp"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 
+    <!-- ProgressBar (safe version) -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+    <!-- Section title -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Our Products"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#1F2937"
+        android:padding="16dp"/>
+
+    <!-- RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"/>
 </LinearLayout>

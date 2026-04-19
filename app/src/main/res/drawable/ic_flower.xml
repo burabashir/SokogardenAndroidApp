@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Center circle -->
+    <path
+        android:fillColor="@color/pink_500"
+        android:pathData="M12,12m-2,0a2,2 0,1 1,4 0a2,2 0,1 1,-4 0" />
+    <!-- Top petal -->
+    <path
+        android:fillColor="@color/pink_500"
+        android:pathData="M12,2c-1.1,0 -2,0.9 -2,2v4c0,1.1 0.9,2 2,2s2,-0.9 2,-2V4c0,-1.1 -0.9,-2 -2,-2z" />
+    <!-- Bottom petal -->
+    <path
+        android:fillColor="@color/pink_500"
+        android:pathData="M12,14c-1.1,0 -2,0.9 -2,2v4c0,1.1 0.9,2 2,2s2,-0.9 2,-2v-4c0,-1.1 -0.9,-2 -2,-2z" />
+    <!-- Left petal -->
+    <path
+        android:fillColor="@color/pink_500"
+        android:pathData="M2,12c0,-1.1 0.9,-2 2,-2h4c1.1,0 2,0.9 2,2s-0.9,2 -2,2H4c-1.1,0 -2,-0.9 -2,-2z" />
+    <!-- Right petal -->
+    <path
+        android:fillColor="@color/pink_500"
+        android:pathData="M14,12c0,-1.1 0.9,-2 2,-2h4c1.1,0 2,0.9 2,2s-0.9,2 -2,2h-4c-1.1,0 -2,-0.9 -2,-2z" />
+    <!-- Top-left petal -->
+    <path
+        android:fillColor="@color/pink_500"
+        android:pathData="M5.64,5.64c-0.78,-0.78 -0.78,-2.05 0,-2.83 0.78,-0.78 2.05,-0.78 2.83,0l2.83,2.83c0.78,0.78 0.78,2.05 0,2.83 -0.78,0.78 -2.05,0.78 -2.83,0L5.64,5.64z" />
+    <!-- Top-right petal -->
+    <path
+        android:fillColor="@color/pink_500"
+        android:pathData="M18.36,5.64c0.78,-0.78 0.78,-2.05 0,-2.83 -0.78,-0.78 -2.05,-0.78 -2.83,0l-2.83,2.83c-0.78,0.78 -0.78,2.05 0,2.83 0.78,0.78 2.05,0.78 2.83,0l2.83,-2.83z" />
+    <!-- Bottom-left petal -->
+    <path
+        android:fillColor="@color/pink_500"
+        android:pathData="M5.64,18.36c-0.78,0.78 -0.78,2.05 0,2.83 0.78,0.78 2.05,0.78 2.83,0l2.83,-2.83c0.78,-0.78 0.78,-2.05 0,-2.83 -0.78,-0.78 -2.05,-0.78 -2.83,0l-2.83,2.83z" />
+    <!-- Bottom-right petal -->
+    <path
+        android:fillColor="@color/pink_500"
+        android:pathData="M18.36,18.36c0.78,0.78 0.78,2.05 0,2.83 -0.78,0.78 -2.05,0.78 -2.83,0l-2.83,-2.83c-0.78,-0.78 -0.78,-2.05 0,-2.83 0.78,-0.78 2.05,-0.78 2.83,0l2.83,2.83z" />
+</vector>

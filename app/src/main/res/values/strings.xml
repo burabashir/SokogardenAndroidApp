@@ -1,5 +1,8 @@
 <resources>
-    <string name="app_name">Sokogarden</string>
+    <string name="app_name">SokoGarden</string>
     <string name="signup_text2"><u>Don\'t have an account? signup</u></string>
     <string name="signup_text">Sign up here</string>
+    <string name="tagline">Puzzle Your Way to Paradise</string>
+    <string name="sprout_icon">Sprout icon</string>
+    <string name="flower_icon">Flower icon</string>
 </resources>
