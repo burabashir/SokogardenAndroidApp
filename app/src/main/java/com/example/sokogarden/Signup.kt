@@ -2,6 +2,8 @@ package com.example.sokogarden
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -63,8 +65,12 @@ class Signup : AppCompatActivity() {
             phone.text.clear()
 
 //            Intent to navigate to main Activity
-            val intent = Intent(applicationContext, MainActivity::class.java)
-            startActivity(intent)
+            Handler(Looper.getMainLooper()).postDelayed({
+
+                val intent = Intent(applicationContext, MainActivity::class.java)
+                startActivity(intent)
+
+            }, 5000) // 5000 milliseconds = 5 seconds
         }
     }
 }

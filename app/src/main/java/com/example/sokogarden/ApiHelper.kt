@@ -44,9 +44,13 @@ class ApiHelper(private val context: Context) {
     }
 
     // =========================
-    // LOGIN
+    // LOGIN (✅ FIXED)
     // =========================
-    fun postLogin(url: String, params: RequestParams) {
+    fun postLogin(
+        url: String,
+        params: RequestParams,
+        callback: (Boolean, String) -> Unit   // ✅ ADDED
+    ) {
 
         client.post(url, params, object : JsonHttpResponseHandler() {
 
@@ -55,7 +59,15 @@ class ApiHelper(private val context: Context) {
                 headers: Array<Header>?,
                 response: JSONObject
             ) {
-                Toast.makeText(context, "Login successful", Toast.LENGTH_SHORT).show()
+                try {
+                    val success = response.getBoolean("success")
+                    val message = response.getString("message")
+
+                    callback(success, message) // ✅ RETURN RESULT
+
+                } catch (e: Exception) {
+                    callback(false, "Parsing error")
+                }
             }
 
             override fun onFailure(
@@ -64,13 +76,13 @@ class ApiHelper(private val context: Context) {
                 throwable: Throwable,
                 errorResponse: JSONObject?
             ) {
-                Toast.makeText(context, "Login failed", Toast.LENGTH_SHORT).show()
+                callback(false, "Login failed")
             }
         })
     }
 
     // =========================
-    // LOAD PRODUCTS (FINAL FIXED VERSION)
+    // LOAD PRODUCTS (UNCHANGED)
     // =========================
     fun loadProducts(
         url: String,
@@ -92,14 +104,10 @@ class ApiHelper(private val context: Context) {
 
                 try {
 
-                    // Convert JSON → Product list
                     val productList = ProductAdapter.fromJsonArray(response)
 
-                    // IMPORTANT: set layout manager (prevents empty screen bug)
                     recyclerView.layoutManager = LinearLayoutManager(context)
                     recyclerView.setHasFixedSize(true)
-
-                    // Attach adapter
                     recyclerView.adapter = ProductAdapter(productList)
 
                     Toast.makeText(context, "Products loaded", Toast.LENGTH_SHORT).show()

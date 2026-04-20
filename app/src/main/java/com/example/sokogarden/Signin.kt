@@ -2,6 +2,8 @@ package com.example.sokogarden
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -48,10 +50,33 @@ class Signin : AppCompatActivity() {
 
             val helper = ApiHelper(this)
 
-            // ❗ SINGLE CALL ONLY
-            helper.postLogin(api, data)
+            // ✅ UPDATED: handle response
+            helper.postLogin(api, data) { success, message ->
+
+                runOnUiThread {
+                    if (success) {
+                        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+
+                        // ✅ OPEN MAIN ACTIVITY
+                        val intent = Intent(this, MainActivity::class.java)
+                        startActivity(intent)
+                        finish()
+
+                    } else {
+                        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
 
             Toast.makeText(this, "Logging in...", Toast.LENGTH_SHORT).show()
+
+//            Intent to navigate to main Activity
+            Handler(Looper.getMainLooper()).postDelayed({
+
+                val intent = Intent(applicationContext, MainActivity::class.java)
+                startActivity(intent)
+
+            }, 5000) // 5000 milliseconds = 5 seconds
         }
     }
 }
